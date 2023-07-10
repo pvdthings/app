@@ -45,7 +45,7 @@
             {#if language === "en"}
                 <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.name)}</div>
             {:else}
-                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.spanish ?? thing.name)}</div>
+                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.spanishName ?? thing.name)}</div>
             {/if}
         </div>
     </div>
