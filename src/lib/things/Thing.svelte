@@ -42,11 +42,9 @@
     <div class="p-2">
         <img src={thing.image ?? BoxIcon} alt={thing.name} class="w-full aspect-square object-contain rounded" />
         <div class="mt-3">
-            {#if language === "en"}
-                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.name)}</div>
-            {:else}
-                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.spanishName ?? thing.name)}</div>
-            {/if}
+            <div class="{fontSize} uppercase font-bold font-sans text-center">
+                {getShortName(language === 'en' ? thing.name : thing.spanishName ?? thing.name)}
+            </div>
         </div>
     </div>
     <div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
