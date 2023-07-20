@@ -15,7 +15,7 @@
                 </a>
             </div>
         </div>
-        <div class="flex flex-row  justify-center content-center">
+        <div class="flex flex-row justify-center content-center">
             <a href="https://pvdthings.coop">
                 <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-16 lg:h-20"/>
             </a>
