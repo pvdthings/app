@@ -2,9 +2,9 @@
     import { t, locale, locales } from "$lib/language/translate"
 </script>
 
-<header class="w-full p-4 flex flex-col space-y-8 justify-center">
+<header class="w-full pt-4 flex flex-col space-y-8 justify-center">
     <div class="grid grid-cols-3">
-        <div class="flex flex-row justify-start">
+        <div class="flex flex-row justify-start pl-1">
             <div>
                 <a href="https://pvdthings.coop" class="flex flex-row items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -15,12 +15,12 @@
                 </a>
             </div>
         </div>
-        <div class="flex flex-row justify-center content-center">
+        <div class="flex flex-row  justify-center content-center">
             <a href="https://pvdthings.coop">
                 <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-16 lg:h-20"/>
             </a>
         </div>
-        <div class="flex flex-row gap-x-3 justify-end align-top">
+        <div class="flex flex-row gap-x-3 justify-end align-top pr-4">
             {#each locales as localeKey}
                 <button
                     class="text-xl font-bold font-display h-fit {($locale === localeKey) && 'underline'} hover:underline uppercase"
