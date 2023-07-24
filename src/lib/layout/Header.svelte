@@ -2,7 +2,7 @@
     import { t, locale, locales } from "$lib/language/translate"
 </script>
 
-<header class="w-full pt-4 flex flex-col space-y-8 justify-center">
+<header class="w-full pt-4 pb-4 flex flex-col space-y-8 justify-center">
     <div class="grid grid-cols-3">
         <div class="flex flex-row justify-start pl-1">
             <div>
