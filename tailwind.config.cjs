@@ -44,6 +44,7 @@ module.exports = {
           "error": "#df2926",
 
           "--btn-text-case": "none",
+          "--rounded-box": "6px"
         }
       }
     ]
