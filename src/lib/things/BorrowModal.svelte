@@ -3,6 +3,13 @@
 	import { ButtonTheme } from "$lib/foundation/button";
   import { showBorrowModal } from "./borrowModalStore";
   import CloseIcon from "$lib/icons/x-mark.svg";
+	import { onDestroy } from "svelte";
+
+  let dialog: HTMLDialogElement;
+
+  const unsubscribe = showBorrowModal.subscribe((value) => {
+    if (value) dialog.showModal();
+  });
 
   const closeModal = () => showBorrowModal.set(false);
 
@@ -10,9 +17,11 @@
     closeModal();
     window.open("https://www.pvdthings.coop/membership", '_blank').focus();
   };
+
+  onDestroy(unsubscribe);
 </script>
 
-<dialog id="borrow-modal" class="modal modal-bottom sm:modal-middle">
+<dialog bind:this={dialog} id="borrow-modal" class="modal modal-bottom sm:modal-middle">
   <form method="dialog" class="modal-box">
     <button class="btn btn-circle btn-ghost outline-none absolute right-2 top-2" on:click={() => showBorrowModal.set(false)}>
       <img src={CloseIcon} alt="Close" height="24" width="24" />
