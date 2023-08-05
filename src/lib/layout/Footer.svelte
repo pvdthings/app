@@ -1,5 +1,5 @@
 <script>
-	import { Column, Link, Row, Text } from "$lib/Foundation.svelte";
+	import { Column, Row } from "$lib/Foundation.svelte";
 </script>
 
 <footer class="bg-bg py-10 relative z-40">
