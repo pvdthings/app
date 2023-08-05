@@ -4,6 +4,7 @@
   import { showBorrowModal } from "./borrowModalStore";
   import CloseIcon from "$lib/icons/x-mark.svg";
 	import { onDestroy } from "svelte";
+	import { t } from "$lib/language/translate";
 
   let dialog: HTMLDialogElement;
 
@@ -26,17 +27,17 @@
     <button class="btn btn-circle btn-ghost outline-none absolute right-2 top-2" on:click={() => showBorrowModal.set(false)}>
       <img src={CloseIcon} alt="Close" height="24" width="24" />
     </button>
-    <h3 class="font-bold text-lg">How to Borrow</h3>
+    <h3 class="font-bold text-lg">{$t('How to Borrow')}</h3>
     <ol class="py-4">
-      <li class="mb-2">1. Purchase a PVD Things membership and pay annual dues.</li>
-      <li class="mb-2">2. Visit us at 12 Library Court in Providence.</li>
+      <li class="mb-2">1. {$t('How to Borrow.Step1')}</li>
+      <li class="mb-2">2. {$t('How to Borrow.Step2')}</li>
     </ol>
     <div class="modal-bottom flex flex-row justify-end gap-3">
       <Button on:click={learnMore}>
-        Learn More
+        {$t('Learn More')}
       </Button>
       <Button theme={ButtonTheme.primary} on:click={closeModal}>
-        OK
+        {$t('OK')}
       </Button>
     </div>
   </form>

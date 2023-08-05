@@ -8,7 +8,12 @@ export default {
         "Donate": "Donate",
         "Click to Donate": "Click to Donate",
         "Available": "Available",
-        "Unavailable": "Unavailable"
+        "Unavailable": "Unavailable",
+        "How to Borrow": "How to Borrow",
+        "How to Borrow.Step1": "Purchase a PVD Things membership and pay annual dues.",
+        "How to Borrow.Step2": "Visit us at 12 Library Court in Providence.",
+        "Learn More": "Learn More",
+        "OK": "OK"
     },
     es: {
         "Button.Home": "Inicio",
@@ -19,6 +24,11 @@ export default {
         "No Results": "No hay resultados",
         "Donate": "Donar",
         "Click to Donate": "Clic para donar",
+        "How to Borrow": "Como pedir prestado",
+        "How to Borrow.Step1": "Compre una membresía de PVD Things y pague cuotas anuales.",
+        "How to Borrow.Step2": "Visítenos en 12 Library Court en Providence.",
+        "Learn More": "Aprende más",
+        "OK": "OK",
         "Available": "Disponible",
         "Unavailable": "Indisponible",
         "All": "Todas",
