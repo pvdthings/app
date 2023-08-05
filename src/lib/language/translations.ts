@@ -13,7 +13,10 @@ export default {
         "How to Borrow.Step1": "Purchase a PVD Things membership and pay annual dues.",
         "How to Borrow.Step2": "Visit us at 12 Library Court in Providence.",
         "Learn More": "Learn More",
-        "OK": "OK"
+        "OK": "OK",
+        "Hours": "Hours",
+        "Wednesday": "Wednesday",
+        "Saturday": "Saturday"
     },
     es: {
         "Button.Home": "Inicio",
@@ -29,6 +32,9 @@ export default {
         "How to Borrow.Step2": "Visítenos en 12 Library Court en Providence.",
         "Learn More": "Aprende más",
         "OK": "OK",
+        "Hours": "Horas",
+        "Wednesday": "Miércoles",
+        "Saturday": "Sábado",
         "Available": "Disponible",
         "Unavailable": "Indisponible",
         "All": "Todas",

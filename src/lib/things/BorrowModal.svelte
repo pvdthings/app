@@ -32,10 +32,10 @@
       <li class="mb-2">1. {$t('How to Borrow.Step1')}</li>
       <li class="mb-2">2. {$t('How to Borrow.Step2')}</li>
     </ol>
-    <h4 class="font-bold">Hours</h4>
+    <h4 class="font-bold">{$t('Hours')}</h4>
     <ul class="pt-1 pb-6">
-      <li>Wednesday 6PM - 8PM</li>
-      <li>Saturday 11AM - 2PM</li>
+      <li>{$t('Wednesday')} 6PM - 8PM</li>
+      <li>{$t('Saturday')} 11AM - 2PM</li>
     </ul>
     <div class="modal-bottom flex flex-row justify-between">
       <Button on:click={learnMore}>
