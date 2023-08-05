@@ -10,6 +10,7 @@
     import EyeIcon from "$lib/icons/eye.svg";
     import { t } from "$lib/language/translate";
     import { goto } from '$app/navigation';
+	import BorrowModal from "$lib/things/BorrowModal.svelte";
 
     export let data;
 
@@ -48,6 +49,7 @@
     {#if !data}
         <LoadingIndicator />
     {:else}
+        <BorrowModal />
         <div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
             <div class="flex flex-row gap-4 justify-between md:justify-start">
                 <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
