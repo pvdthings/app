@@ -32,7 +32,7 @@
       <li class="mb-2">1. {$t('How to Borrow.Step1')}</li>
       <li class="mb-2">2. {$t('How to Borrow.Step2')}</li>
     </ol>
-    <div class="modal-bottom flex flex-row justify-end gap-3">
+    <div class="modal-bottom flex flex-row justify-between">
       <Button on:click={learnMore}>
         {$t('Learn More')}
       </Button>
