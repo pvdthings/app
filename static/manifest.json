@@ -1,5 +1,5 @@
 {
-    "name": "Providence Library of Things",
+    "name": "PVD Things Catalog",
     "short_name": "PVD Things",
     "icons": [
         {
@@ -23,8 +23,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#fdd835",
+    "theme_color": "#A5B4FC",
     "background_color": "#A5B4FC",
-    "display": "minimal-ui",
+    "display": "standalone",
     "start_url": "/"
 }
