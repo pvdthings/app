@@ -6,7 +6,7 @@
 
 <Head 
 	title="PVD Things" 
-	description="The app for Providence Library of Things."
+	description="PVD Things Catalog"
 	keywords="Providence, Library, Things, PVD, Tools, Rentals, Sharing"
 	image="/PVD_Things_Twitter_Header.png"
 	url="https://app.pvdthings.coop"

@@ -23,10 +23,30 @@ module.exports = {
         "1/4-screen": "25vw"
       },
       backgroundImage: theme => ({
-        "purple-city" : "url('/2.png')",
+        "purple-city": "url('/2.png')",
         "long-city": "url('/long-city.png')"
       })
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        pvdthingsTheme: {
+          "primary": "#facc15",
+          "secondary": "#d8e1ff",       
+          "accent": "#a78bfa",
+          "neutral": "#2c2537", 
+          "base-100": "#d8e1ff",
+          "info": "#2563eb", 
+          "success": "#54de97",
+          "warning": "#fb923c", 
+          "error": "#df2926",
+
+          "--btn-text-case": "none",
+          "--rounded-box": "6px"
+        }
+      }
+    ]
+  },
 }
