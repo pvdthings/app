@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import { filter } from '$lib/filters';
-	import Things from '$lib/things/Things.svelte';
 	import { Button, TextInput } from '$lib/Foundation.svelte';
 	import { ButtonTheme } from '$lib/foundation/button';
 	import LoadingIndicator from '$lib/LoadingIndicator.svelte';
@@ -10,11 +9,14 @@
 	import EyeIcon from '$lib/icons/eye.svg';
 	import { t } from '$lib/language/translate';
 	import BorrowModal from '$lib/things/BorrowModal.svelte';
-	import { categoryFilter, searchFilter, wishListFilter } from '$lib/stores/catalog';
+	import { categories, categoryFilter, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
+	import ThingsView from '$lib/views/ThingsView.svelte';
 
 	export let data;
 
-	let shownThings = data.things;
+	$things = data.things;
+  $filteredThings = data.things;
+  $categories = data.categories;
 
 	onMount(() => {
 		const urlParams = new URLSearchParams(window.location.search);
@@ -23,7 +25,7 @@
 	});
 
 	const filterThings = () => {
-		shownThings = filter(data.things, {
+		$filteredThings = filter(data.things, {
 			keyword: $searchFilter,
 			onlyWishList: $wishListFilter,
 			category: $categoryFilter
@@ -48,7 +50,7 @@
 		<BorrowModal />
 		<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
 			<div class="flex flex-row gap-4 justify-between md:justify-start">
-				<Chooser on:chosen={filterThingsByCategory} options={data.categories} />
+				<Chooser on:chosen={filterThingsByCategory} options={$categories} />
 				{#key $wishListFilter}
 					<Button
 						icon={EyeOffIcon}
@@ -65,8 +67,8 @@
 			<TextInput bind:value={$searchFilter} on:input={filterThings} placeholder={$t('Input.Search')} />
 		</div>
 		<div class="mb-8">
-			{#if shownThings.length > 0}
-				<Things things={shownThings} categories={data.categories} shownCategory={$categoryFilter} />
+			{#if $filteredThings.length > 0}
+				<ThingsView />
 			{:else}
 				<div class="text-lg text-center font-bold uppercase">{$t('No Results')}</div>
 			{/if}
