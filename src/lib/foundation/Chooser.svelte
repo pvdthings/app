@@ -2,7 +2,7 @@
     import { createEventDispatcher } from "svelte";
     import { t, locale } from "$lib/language/translate";
     import { defaultFilterCategory } from "../filters";
-    import CloseIcon from "$lib/icons/close.svg";
+    import CloseIcon from "$lib/icons/x-mark.svg";
 
     export let options = [];
 
@@ -35,9 +35,9 @@
     </button>
     <div class:dropdownHidden class="fixed top-0 left-0 w-full h-full overflow-y-scroll md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal md:hovers-static p-4 md:rounded-md flex flex-col gap-y-4 md:gap-y-2 z-50">
         <div class="md:hidden">
-            <div class="text-xl font-bold chooser-text">{$t('Chooser.CategoryPrompt')}
-                <button class="close-button" on:click={toggleDropdown}>
-                    <img class="icon" src={CloseIcon} alt="close"/>
+            <div class="text-xl font-bold text-left flex">{$t('Chooser.CategoryPrompt')}
+                <button class="ml-auto" on:click={toggleDropdown}>
+                    <img class="w-[30px] h-[30px]" src={CloseIcon} alt="close"/>
                 </button>
             </div>
         </div>
@@ -51,16 +51,5 @@
 <style lang="postcss">
     .dropdownHidden {
         @apply hidden;
-    }
-    .chooser-text{
-        text-align: left;
-        display: flex;
-    }
-    .close-button{
-        margin-left: auto;
-    }
-    .icon {
-        width: 30px;
-        height: 30px;
     }
 </style>
