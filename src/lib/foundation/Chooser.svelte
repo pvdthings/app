@@ -2,6 +2,7 @@
     import { createEventDispatcher } from "svelte";
     import { t, locale } from "$lib/language/translate";
     import { defaultFilterCategory } from "../filters";
+    import CloseIcon from "$lib/icons/x-mark.svg";
 
     export let options = [];
 
@@ -33,7 +34,13 @@
         <span>{isEnglish ? chosenOption : $t(chosenOption)}</span>
     </button>
     <div class:dropdownHidden class="fixed top-0 left-0 w-full h-full overflow-y-scroll md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal md:hovers-static p-4 md:rounded-md flex flex-col gap-y-4 md:gap-y-2 z-50">
-        <div class="text-xl font-bold md:hidden">{$t('Chooser.CategoryPrompt')}</div>
+        <div class="md:hidden">
+            <div class="text-xl font-bold text-left flex">{$t('Chooser.CategoryPrompt')}
+                <button class="ml-auto" on:click={toggleDropdown}>
+                    <img class="w-[30px] h-[30px]" src={CloseIcon} alt="close"/>
+                </button>
+            </div>
+        </div>
             <button on:click={() => optionChosen(defaultFilterCategory)} class="text-2xl md:text-lg text-left active:underline hover:underline hover:underline-offset-2 hover:decoration-2">{isEnglish ? defaultFilterCategory : $t(defaultFilterCategory)}</button>
         {#each options as option}
             <button on:click={() => optionChosen(option)} class="text-2xl md:text-lg text-left active:underline hover:underline hover:underline-offset-2 hover:decoration-2">{isEnglish ? option : $t(option)}</button>
