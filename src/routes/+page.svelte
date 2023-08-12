@@ -1,16 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
 	import { filter } from '$lib/filters';
-	import { Button, TextInput } from '$lib/Foundation.svelte';
-	import { ButtonTheme } from '$lib/foundation/button';
+	import { TextInput } from '$lib/Foundation.svelte';
 	import LoadingIndicator from '$lib/LoadingIndicator.svelte';
 	import Chooser from '$lib/foundation/Chooser.svelte';
-	import EyeOffIcon from '$lib/icons/eye-off.svg';
-	import EyeIcon from '$lib/icons/eye.svg';
 	import { t } from '$lib/language/translate';
 	import BorrowModal from '$lib/things/BorrowModal.svelte';
 	import { categories, categoryFilter, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
 	import ThingsView from '$lib/views/ThingsView.svelte';
+	import WishListButtonView from '$lib/views/WishListButtonView.svelte';
 
 	export let data;
 
@@ -25,7 +23,7 @@
 	});
 
 	const filterThings = () => {
-		$filteredThings = filter(data.things, {
+		$filteredThings = filter($things, {
 			keyword: $searchFilter,
 			onlyWishList: $wishListFilter,
 			category: $categoryFilter
@@ -51,18 +49,7 @@
 		<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
 			<div class="flex flex-row gap-4 justify-between md:justify-start">
 				<Chooser on:chosen={filterThingsByCategory} options={$categories} />
-				{#key $wishListFilter}
-					<Button
-						icon={EyeOffIcon}
-						selectedIcon={EyeIcon}
-						on:click={toggleWishList}
-						theme={ButtonTheme.default}
-						text={$t('Button.WishList')}
-						selected={$wishListFilter}
-					>
-						{$t('Button.WishList')}
-					</Button>
-				{/key}
+				<WishListButtonView on:click={toggleWishList} />
 			</div>
 			<TextInput bind:value={$searchFilter} on:input={filterThings} placeholder={$t('Input.Search')} />
 		</div>
