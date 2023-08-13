@@ -1,6 +1,6 @@
 <script>
     import "../app.css";
-    import Head from "$lib/Head.svelte";
+    import { Head } from "$lib/foundation";
     import Layout from "$lib/layout/Layout.svelte";
 </script>
 
