@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components";
-	import { ButtonTheme } from "$lib/components/button";
+	import { ButtonTheme } from "$lib/components/Button/button";
   import { showBorrowModal } from "./stores";
   import CloseIcon from "$lib/icons/x-mark.svg";
 	import { onDestroy } from "svelte";

@@ -1,4 +1,4 @@
-export { default as Button } from "./Button.svelte";
+export { default as Button } from "./Button/Button.svelte";
 export { default as Chooser } from "./Chooser.svelte";
 export { default as Column } from "./Column.svelte";
 export { default as Head } from "./Head.svelte";
