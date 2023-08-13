@@ -1,6 +1,6 @@
 <script>
-	import { Button } from "$lib/foundation";
-	import { ButtonTheme } from "$lib/foundation/button";
+	import { Button } from "$lib/components";
+	import { ButtonTheme } from "$lib/components/button";
   import EyeOffIcon from '$lib/icons/eye-off.svg';
 	import EyeIcon from '$lib/icons/eye.svg';
 	import { t } from "$lib/language/translate";

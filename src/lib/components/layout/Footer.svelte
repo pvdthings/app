@@ -1,5 +1,5 @@
 <script>
-	import { Column, Row } from "$lib/foundation";
+	import { Column, Row } from "$lib/components";
 </script>
 
 <footer class="bg-bg py-10 relative z-40">

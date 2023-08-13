@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { LoadingIndicator, TextInput } from '$lib/foundation';
+	import { LoadingIndicator, TextInput } from '$lib/components';
 	import { t } from '$lib/language/translate';
 	import { BorrowModal } from '$lib/things/BorrowModal';
 	import { categories, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';

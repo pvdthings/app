@@ -1,5 +1,5 @@
 <script>
-	import { Chooser } from "$lib/foundation";
+	import { Chooser } from "$lib/components";
 	import { categories, categoryFilter } from "$lib/stores/catalog";
 
   const filterThingsByCategory = (event) => {
