@@ -1,11 +1,10 @@
 <script>
-	import { Button } from "$lib/Foundation.svelte";
+	import { Button } from "$lib/foundation";
 	import { ButtonTheme } from "$lib/foundation/button";
   import EyeOffIcon from '$lib/icons/eye-off.svg';
 	import EyeIcon from '$lib/icons/eye.svg';
 	import { t } from "$lib/language/translate";
 	import { wishListFilter } from "$lib/stores/catalog";
-
 </script>
 
 {#key $wishListFilter}

@@ -1,5 +1,5 @@
 <script>
-    import { Row } from "$lib/Foundation.svelte";
+    import Row from "./Row.svelte";
 </script>
 
 <div class="fixed z-50 h-screen w-screen inset-0 bg-black flex flex-col gap-4 justify-center">

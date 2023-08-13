@@ -1,8 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { TextInput } from '$lib/Foundation.svelte';
-	import LoadingIndicator from '$lib/LoadingIndicator.svelte';
-	import Chooser from '$lib/foundation/Chooser.svelte';
+	import { Chooser, LoadingIndicator, TextInput } from '$lib/foundation';
 	import { t } from '$lib/language/translate';
 	import BorrowModal from '$lib/things/BorrowModal.svelte';
 	import { categories, categoryFilter, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
