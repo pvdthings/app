@@ -1,7 +1,7 @@
 <script>
     import "../app.css";
     import { Head } from "$lib/foundation";
-    import Layout from "$lib/layout/Layout.svelte";
+    import Layout from "$lib/foundation/layout/Layout.svelte";
 </script>
 
 <Head 
