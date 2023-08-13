@@ -1,11 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-	import { Chooser, LoadingIndicator, TextInput } from '$lib/foundation';
+	import { LoadingIndicator, TextInput } from '$lib/foundation';
 	import { t } from '$lib/language/translate';
 	import { BorrowModal } from '$lib/things/BorrowModal';
-	import { categories, categoryFilter, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
+	import { categories, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
 	import ThingsView from '$lib/views/ThingsView.svelte';
 	import WishListButtonView from '$lib/views/WishListButtonView.svelte';
+	import CategoryChooserView from '$lib/views/CategoryChooserView.svelte';
 
 	export let data;
 
@@ -16,10 +17,6 @@
 		const urlParams = new URLSearchParams(window.location.search);
     $wishListFilter = urlParams.get('showWishList') === 'true';
 	});
-
-	const filterThingsByCategory = (event) => {
-    $categoryFilter = event.detail;
-	};
 </script>
 
 <div class="mx-3 lg:mx-auto lg:w-3/4">
@@ -29,7 +26,7 @@
 		<BorrowModal />
 		<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
 			<div class="flex flex-row gap-4 justify-between md:justify-start">
-				<Chooser on:chosen={filterThingsByCategory} options={$categories} />
+				<CategoryChooserView />
 				<WishListButtonView />
 			</div>
 			<TextInput bind:value={$searchFilter} placeholder={$t('Input.Search')} />
