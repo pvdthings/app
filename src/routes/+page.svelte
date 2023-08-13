@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Chooser, LoadingIndicator, TextInput } from '$lib/foundation';
 	import { t } from '$lib/language/translate';
-	import BorrowModal from '$lib/things/BorrowModal.svelte';
+	import { BorrowModal } from '$lib/things/BorrowModal';
 	import { categories, categoryFilter, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
 	import ThingsView from '$lib/views/ThingsView.svelte';
 	import WishListButtonView from '$lib/views/WishListButtonView.svelte';

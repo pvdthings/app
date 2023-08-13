@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "$lib/foundation/Button.svelte";
 	import { ButtonTheme } from "$lib/foundation/button";
-  import { showBorrowModal } from "./borrowModalStore";
+  import { showBorrowModal } from "./stores";
   import CloseIcon from "$lib/icons/x-mark.svg";
 	import { onDestroy } from "svelte";
 	import { t } from "$lib/language/translate";
