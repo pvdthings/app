@@ -1,7 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
     import { t, locale } from "$lib/language/translate";
-    import { defaultFilterCategory } from "../filters";
+    import { defaultFilterCategory } from "../utils/filters";
 
     export let options = [];
 

@@ -1,4 +1,4 @@
-import { defaultFilterCategory, filter } from "$lib/filters";
+import { defaultFilterCategory, filter } from "$lib/utils/filters";
 import { derived, writable } from "svelte/store";
 
 export const categoryFilter = writable<string>(defaultFilterCategory);
