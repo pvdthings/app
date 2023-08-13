@@ -20,10 +20,6 @@
 	const filterThingsByCategory = (event) => {
     $categoryFilter = event.detail;
 	};
-
-	const toggleWishList = () => {
-    $wishListFilter = !$wishListFilter;
-	};
 </script>
 
 <div class="mx-3 lg:mx-auto lg:w-3/4">
@@ -34,7 +30,7 @@
 		<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
 			<div class="flex flex-row gap-4 justify-between md:justify-start">
 				<Chooser on:chosen={filterThingsByCategory} options={$categories} />
-				<WishListButtonView on:click={toggleWishList} />
+				<WishListButtonView />
 			</div>
 			<TextInput bind:value={$searchFilter} placeholder={$t('Input.Search')} />
 		</div>
