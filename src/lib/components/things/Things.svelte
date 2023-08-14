@@ -1,6 +1,6 @@
 <script>
     import Scroller from "./Scroller.svelte";
-    import { filterByCategory } from "$lib/filters";
+    import { filterByCategory } from "$lib/utils/filters";
 
     export let things;
     export let categories;

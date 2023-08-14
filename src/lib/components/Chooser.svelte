@@ -1,7 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
     import { t, locale } from "$lib/language/translate";
-    import { defaultFilterCategory } from "../filters";
+    import { defaultFilterCategory } from "../utils/filters";
     import CloseIcon from "$lib/icons/x-mark.svg";
 
     export let options = [];
