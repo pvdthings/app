@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { t, locale } from '$lib/language/translate';
-	import CloseIcon from '$lib/icons/x-mark.svg';
-	import ChooserItem from './Chooser/ChooserItem.svelte';
+	import ChooserBody from './Chooser/ChooserBody.svelte';
 
 	export let options = [];
 
@@ -49,31 +48,11 @@
 		</span>
 		<span>{isEnglish ? chosenOption : $t(chosenOption)}</span>
 	</button>
-	<div
-		class:dropdownHidden
-		class="fixed top-0 left-0 w-full h-full overflow-hidden md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal md:hovers-static md:rounded-md flex flex-col md:gap-y-2 z-50"
-	>
-		<div class="md:hidden">
-			<div class="p-4 bg-primary text-2xl font-bold text-left sticky top-0">
-				<!-- {$t('Chooser.CategoryPrompt')} -->
-        Category
-				<button class="float-right" on:click={toggleDropdown}>
-					<img class="w-[30px] h-[30px]" src={CloseIcon} alt="close" />
-				</button>
-			</div>
-      <hr class="border-black border-opacity-20" />
-		</div>
-    <div class="flex flex-col overflow-y-scroll">
-      {#each options as option}
-        <ChooserItem on:click={() => optionChosen(option)}>{isEnglish ? option : $t(option)}</ChooserItem>
-        <hr />
-      {/each}
-    </div>
-	</div>
+	<ChooserBody
+		hidden={dropdownHidden}
+		title={'Category'}
+		{options}
+		onOptionClick={optionChosen}
+		onClose={toggleDropdown}
+	/>
 </div>
-
-<style lang="postcss">
-	.dropdownHidden {
-		@apply hidden;
-	}
-</style>
