@@ -50,8 +50,8 @@
 	</button>
 	<ChooserBody
 		hidden={dropdownHidden}
-		title={'Category'}
-		{options}
+		title={$t('Category')}
+		options={isEnglish ? options : options.map(option => $t(option))}
 		onOptionClick={optionChosen}
 		onClose={toggleDropdown}
 	/>

@@ -2,7 +2,7 @@ export default {
     en: {
         "Button.Home": "Home",
         "Button.WishList": "Wish List",
-        "Chooser.CategoryPrompt": "Choose a category:",
+        "Category": "Category",
         "Input.Search": "Search...",
         "No Results": "No Results",
         "Donate": "Donate",
@@ -22,7 +22,7 @@ export default {
         "Button.Home": "Inicio",
         "Button.Donate": "Donar",
         "Button.WishList": "Donaciones",
-        "Chooser.CategoryPrompt": "Elija una categoría:",
+        "Category": "Categoría",
         "Input.Search": "Buscar...",
         "No Results": "No hay resultados",
         "Donate": "Donar",
