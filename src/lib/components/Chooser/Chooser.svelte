@@ -42,8 +42,8 @@
 	<ChooserBody
 		hidden={dropdownHidden}
 		title={$t('Category')}
-		chosenOption={isEnglish ? chosenOption : $t(chosenOption)}
-		options={isEnglish ? options : options.map(option => $t(option))}
+		{chosenOption}
+		{options}
 		onOptionClick={optionChosen}
 		onClose={toggleDropdown}
 	/>

@@ -3,6 +3,7 @@
   import ChevronIcon from "$lib/icons/chevron.svg";
   import CloseIcon from '$lib/icons/x-mark.svg';
 	import ChooserItem from './ChooserItem.svelte';
+	import { t } from "$lib/language/translate";
 
   export let title: string;
   export let chosenOption: string;
@@ -34,7 +35,7 @@
       src={ChevronIcon}
       alt="Dropdown"
     />
-		<span>{chosenOption}</span>
+		<span>{$t(chosenOption)}</span>
 	</button>
   <div class="flex flex-col overflow-y-scroll">
     {#each options as option}
@@ -43,7 +44,7 @@
         on:click={() => onOptionClick(option)}
         selected={chosenOption == option}
       >
-        {option}
+        {$t(option)}
       </ChooserItem>
     {/each}
   </div>
