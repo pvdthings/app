@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { t, locale } from '$lib/language/translate';
-	import ChooserBody from './Chooser/ChooserBody.svelte';
+	import ChooserBody from './ChooserBody.svelte';
 
 	export let options = [];
 

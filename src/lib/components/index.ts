@@ -1,5 +1,5 @@
 export { default as Button } from "./Button/Button.svelte";
-export { default as Chooser } from "./Chooser.svelte";
+export { Chooser } from "./Chooser";
 export { default as Column } from "./Column.svelte";
 export { default as Head } from "./Head.svelte";
 export { default as LoadingIndicator } from "./LoadingIndicator.svelte";
