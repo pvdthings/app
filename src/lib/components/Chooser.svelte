@@ -34,6 +34,7 @@
 	>
 		<span class="mr-1">
 			<svg
+				class:flipped={!dropdownHidden} 
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"
 				height="24"
@@ -56,3 +57,9 @@
 		onClose={toggleDropdown}
 	/>
 </div>
+
+<style>
+	.flipped {
+		@apply rotate-180;
+	}
+</style>
