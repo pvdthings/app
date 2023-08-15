@@ -1,6 +1,8 @@
 <script lang="ts">
+	import "./Chooser.css";
 	import { createEventDispatcher } from 'svelte';
 	import { t, locale } from '$lib/language/translate';
+	import ChevronIcon from "$lib/icons/chevron.svg";
 	import ChooserBody from './ChooserBody.svelte';
 
 	export let options = [];
@@ -28,23 +30,13 @@
 <div class="relative h-11" on:click|stopPropagation={() => {}} on:keypress={() => {}}>
 	<button
 		on:click={toggleDropdown}
-		class="bg-indigo-100 hover:bg-indigo-50 px-3 py-1 h-full w-48 rounded brutal hovers font-bold font-display text-left outline-none"
+		class="chooser-button bg-indigo-100 hover:bg-indigo-50 h-full w-48 brutal hovers"
 	>
-		<span class="mr-1">
-			<svg
-				class:flipped={!dropdownHidden} 
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="3"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="inline"><polyline points="6 9 12 15 18 9" /></svg
-			>
-		</span>
+		<img
+			class="inline mr-1"
+			src={ChevronIcon}
+			alt="Dropdown"
+		/>
 		<span>{isEnglish ? chosenOption : $t(chosenOption)}</span>
 	</button>
 	<ChooserBody
@@ -56,9 +48,3 @@
 		onClose={toggleDropdown}
 	/>
 </div>
-
-<style>
-	.flipped {
-		@apply rotate-180;
-	}
-</style>
