@@ -47,7 +47,12 @@
   <div class="flex flex-col overflow-y-scroll">
     {#each options as option}
       <hr />
-      <ChooserItem on:click={() => onOptionClick(option)}>{option}</ChooserItem>
+      <ChooserItem
+        on:click={() => onOptionClick(option)}
+        selected={chosenOption == option}
+      >
+        {option}
+      </ChooserItem>
     {/each}
   </div>
 </div>
