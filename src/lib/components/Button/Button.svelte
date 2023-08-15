@@ -37,9 +37,9 @@
         <slot />
 </button>
 
-<style lang="postcss">
+<style>
     button.default {
-        @apply bg-indigo-100;
+        @apply bg-indigo-100 hover:bg-indigo-50;
     }
 
     button.defaultToggled {
