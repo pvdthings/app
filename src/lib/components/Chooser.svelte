@@ -28,9 +28,7 @@
 <div class="relative h-11" on:click|stopPropagation={() => {}} on:keypress={() => {}}>
 	<button
 		on:click={toggleDropdown}
-		class="{dropdownHidden
-			? 'bg-indigo-100 hover:bg-indigo-50'
-			: 'bg-primary'} px-3 py-1 h-full w-44 rounded brutal hovers font-bold font-display text-left outline-none"
+		class="bg-indigo-100 hover:bg-indigo-50 px-3 py-1 h-full w-44 rounded brutal hovers font-bold font-display text-left outline-none"
 	>
 		<span class="mr-1">
 			<svg
@@ -52,6 +50,7 @@
 	<ChooserBody
 		hidden={dropdownHidden}
 		title={$t('Category')}
+		chosenOption={isEnglish ? chosenOption : $t(chosenOption)}
 		options={isEnglish ? options : options.map(option => $t(option))}
 		onOptionClick={optionChosen}
 		onClose={toggleDropdown}
