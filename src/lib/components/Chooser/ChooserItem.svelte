@@ -11,7 +11,7 @@
   >
     <slot />
     {#if selected}
-      <img class="inline-block ml-1 mb-1 w-[20px] h-[20px]" src={CheckIcon} alt="Selected" />
+      <img class="inline-block float-right mt-1 w-[20px] h-[20px]" src={CheckIcon} alt="Selected" />
     {/if}
   </button
 >
