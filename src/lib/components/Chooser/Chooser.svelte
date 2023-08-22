@@ -9,6 +9,7 @@
 
 	let chosenOption = options[0];
 	let dropdownHidden = true;
+	let innerWidth: number;
 
 	$: isEnglish = $locale === 'en';
 
@@ -16,6 +17,12 @@
 
 	const toggleDropdown = () => {
 		dropdownHidden = !dropdownHidden;
+
+		if (innerWidth < 768) {
+			document.body.classList.toggle('overflow-hidden');
+		} else {
+			document.body.classList.remove('overflow-hidden');
+		}
 	};
 
 	const optionChosen = (option) => {
@@ -25,7 +32,7 @@
 	};
 </script>
 
-<svelte:window on:click={() => (dropdownHidden = true)} />
+<svelte:window bind:innerWidth on:click={() => (dropdownHidden = true)} />
 
 <div class="relative h-11" on:click|stopPropagation={() => {}} on:keypress={() => {}}>
 	<button
