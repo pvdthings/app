@@ -20,7 +20,7 @@
     on:change
     on:keyup={keyReleased}
     class:invalid
-    class="px-4 py-2 brutal hovers outline-none {customClass}"
+    class="w-full px-4 py-2 pl-10 brutal hovers outline-none {customClass}"
 />
 
 <style lang="postcss">
