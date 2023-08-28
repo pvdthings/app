@@ -7,15 +7,16 @@
 	import ThingsView from '$lib/views/ThingsView.svelte';
 	import WishListButtonView from '$lib/views/WishListButtonView.svelte';
 	import CategoryChooserView from '$lib/views/CategoryChooserView.svelte';
+	import SearchInputView from '$lib/views/SearchInputView.svelte';
 
 	export let data;
 
 	$things = data.things;
-  $categories = data.categories;
+	$categories = data.categories;
 
 	onMount(() => {
 		const urlParams = new URLSearchParams(window.location.search);
-    $wishListFilter = urlParams.get('showWishList') === 'true';
+		$wishListFilter = urlParams.get('showWishList') === 'true';
 	});
 </script>
 
@@ -29,7 +30,7 @@
 				<CategoryChooserView />
 				<WishListButtonView />
 			</div>
-			<TextInput bind:value={$searchFilter} placeholder={$t('Input.Search')} />
+				<SearchInputView />
 		</div>
 		<div class="mb-8">
 			{#if $filteredThings.length > 0}
