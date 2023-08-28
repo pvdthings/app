@@ -1,7 +1,7 @@
 <script>
 	import BoxIcon from '$lib/icons/box.svg';
 	import { t, locale } from '$lib/language/translate';
-	import { showBorrowModal } from './borrowModalStore';
+	import { showBorrowModal } from './BorrowModal';
 
 	export let thing;
 

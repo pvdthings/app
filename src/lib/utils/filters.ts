@@ -2,7 +2,7 @@
 export const defaultFilterCategory = "All";
 
 export const filter = (things, { keyword, onlyWishList, category }) => {
-    let filtered = things;
+    let filtered = things ?? [];
     
     if (category && category.toLowerCase() !== "all")
         filtered = filtered.filter(thing => thing.categories.includes(category));
