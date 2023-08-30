@@ -6,10 +6,16 @@ export const filter = (things, { keyword, onlyWishList, category }) => {
     
     if (category && category.toLowerCase() !== "all")
         filtered = filtered.filter(thing => thing.categories.includes(category));
+
     if (keyword.length > 0)
-        filtered = filtered.filter(thing => thing.name.toLowerCase().includes(keyword.toLowerCase()));
+        filtered = filtered.filter(thing => {
+            return thing.name.toLowerCase().includes(keyword.toLowerCase()) 
+                || (thing.spanishName && thing.spanishName?.toLowerCase().includes(keyword.toLowerCase()));
+        });
+
     if (onlyWishList)
         filtered = filtered.filter(thing => thing.stock < 1);
+    
     if (!onlyWishList)
         filtered = filtered.filter(thing => thing.stock !== 0);
 
