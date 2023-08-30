@@ -1,6 +1,6 @@
 {
 	"name": "things-catalog-app",
-	"version": "0.11.0",
+	"version": "0.12.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
