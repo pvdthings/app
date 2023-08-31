@@ -1,8 +1,5 @@
-export const load = async ({ fetch }) => {
-    const host = process.env.API_HOST ?? 'http://localhost:8088';
-    const result = await fetch(`${host}/things`);
-    const data = await result.json();
-    data.things = data.things.filter(thing => thing.categories);
+import { fetchThings } from '$lib/server/api.js'
 
-    return data;
+export const load = async ({ fetch }) => {
+  return fetchThings(fetch);
 }

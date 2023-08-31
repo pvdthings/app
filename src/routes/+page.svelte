@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	import { LoadingIndicator, TextInput } from '$lib/components';
+	import { LoadingIndicator } from '$lib/components';
 	import { t } from '$lib/language/translate';
 	import { BorrowModal } from '$lib/components/things/BorrowModal';
-	import { categories, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
+	import { categories, filteredThings, things, wishListFilter } from '$lib/stores/catalog';
 	import ThingsView from '$lib/views/ThingsView.svelte';
 	import WishListButtonView from '$lib/views/WishListButtonView.svelte';
 	import CategoryChooserView from '$lib/views/CategoryChooserView.svelte';
@@ -30,7 +30,7 @@
 				<CategoryChooserView />
 				<WishListButtonView />
 			</div>
-				<SearchInputView />
+			<SearchInputView />
 		</div>
 		<div class="mb-8">
 			{#if $filteredThings.length > 0}
