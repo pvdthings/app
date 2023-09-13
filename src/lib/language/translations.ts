@@ -31,7 +31,8 @@ export default {
         "Wednesday": "Wednesday",
         "Saturday": "Saturday",
         "Catalog": "Catalog",
-        "My List": "My List"
+        "My List": "My List",
+        "Info": "Info"
     },
     es: {
         "Button.Home": "Inicio",
@@ -66,6 +67,7 @@ export default {
         "Automotive": "Automotor",
         "Health": "Salud",
         "Catalog": "Catálago",
-        "My List": "Mi lista"
+        "My List": "Mi lista",
+        "Info": "Información"
     }
 }

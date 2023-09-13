@@ -1,13 +1,17 @@
 <script>
 	import BookOpenIcon from '$lib/icons/book-open.svg';
 	import BookmarkIcon from '$lib/icons/bookmark.svg';
+	import InfoCircleIcon from '$lib/icons/info-circle.svg';
 	import SolidBookOpenIcon from '$lib/icons/solid/book-open.svg';
 	import SolidBookmarkIcon from '$lib/icons/solid/bookmark.svg';
+	import SolidInfoCircleIcon from '$lib/icons/solid/info-circle.svg';
+
 	import { t } from '$lib/language/translate';
 	import { activeScreen, Screen } from '$lib/stores/app';
 
 	$: catalogText = $t('Catalog');
 	$: myListText = $t('My List');
+	$: infoText = $t('Info');
 </script>
 
 <div class="btm-nav upward-shadow lg:hidden">
@@ -34,6 +38,18 @@
 			height={24}
 		/>
 		<span class="btm-nav-label font-sans font-medium">{myListText}</span>
+	</button>
+	<button
+		class:active={$activeScreen === Screen.info}
+		on:click={() => ($activeScreen = Screen.info)}
+	>
+		<img
+			src={$activeScreen === Screen.info ? SolidInfoCircleIcon : InfoCircleIcon}
+			alt={infoText}
+			width={24}
+			height={24}
+		/>
+		<span class="btm-nav-label font-sans font-medium">{infoText}</span>
 	</button>
 </div>
 
