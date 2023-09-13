@@ -1,4 +1,4 @@
-<div class="navbar fixed top-0 left-0 right-0 z-50 shadow-lg bg-indigo-400 text-white">
+<div class="navbar fixed top-0 left-0 right-0 z-50 shadow-lg bg-indigo-300">
   <div class="navbar-start">
     <slot name="start" />
   </div>
