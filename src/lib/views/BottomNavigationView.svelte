@@ -6,8 +6,8 @@
 	import { t } from '$lib/language/translate';
 	import { activeScreen, Screen } from '$lib/stores/app';
 
-	const catalog = $t('Catalog');
-	const myList = $t('My List');
+	$: catalogText = $t('Catalog');
+	$: myListText = $t('My List');
 </script>
 
 <div class="btm-nav upward-shadow lg:hidden">
@@ -17,11 +17,11 @@
 	>
 		<img
 			src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
-			alt={catalog}
+			alt={catalogText}
 			width={24}
 			height={24}
 		/>
-		<span class="btm-nav-label font-sans font-medium">{catalog}</span>
+		<span class="btm-nav-label font-sans font-medium">{catalogText}</span>
 	</button>
 	<button
 		class:active={$activeScreen === Screen.myList}
@@ -29,11 +29,11 @@
 	>
 		<img
 			src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
-			alt={myList}
+			alt={myListText}
 			width={24}
 			height={24}
 		/>
-		<span class="btm-nav-label font-sans font-medium">{myList}</span>
+		<span class="btm-nav-label font-sans font-medium">{myListText}</span>
 	</button>
 </div>
 
