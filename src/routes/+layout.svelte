@@ -2,7 +2,9 @@
 	import '../app.css';
 	import { Head } from '$lib/components';
 	import BottomNavigationView from '$lib/views/BottomNavigationView.svelte';
-	import AppBar from '$lib/components/layout/AppBar.svelte';
+	import AppBar from '$lib/components/AppBar.svelte';
+	import LanguageToggleView from '$lib/views/LanguageToggleView.svelte';
+	import HomeButton from '$lib/components/HomeButton.svelte';
 </script>
 
 <Head
@@ -14,7 +16,10 @@
 	twitterHandle="@pvdthings"
 />
 <main class="bg-indigo-100 flex flex-col min-h-screen w-full">
-	<AppBar />
+	<AppBar>
+		<HomeButton slot="start" />
+		<LanguageToggleView slot="end" />
+	</AppBar>
 	<div class="flex-grow pt-28 lg:pt-32 pb-20">
 		<slot />
 	</div>

@@ -30,7 +30,9 @@ export default {
         "OK": "OK",
         "Hours": "Hours",
         "Wednesday": "Wednesday",
-        "Saturday": "Saturday"
+        "Saturday": "Saturday",
+        "Catalog": "Catalog",
+        "My List": "My List"
     },
     es: {
         "Button.Home": "Inicio",
@@ -64,6 +66,8 @@ export default {
         "Crafts": "Artesanía",
         "Pet": "Mascotas",
         "Automotive": "Automotor",
-        "Health": "Salud"
+        "Health": "Salud",
+        "Catalog": "Catálago",
+        "My List": "My lista"
     }
 }
