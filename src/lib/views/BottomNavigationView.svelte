@@ -8,7 +8,7 @@
   const myList = $t('My List');
 </script>
 
-<div class="btm-nav upward-shadow">
+<div class="btm-nav upward-shadow lg:hidden">
   <button
     class:active={$activeScreen === Screen.catalog}
     on:click={() => $activeScreen = Screen.catalog}
