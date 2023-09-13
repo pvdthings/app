@@ -3,7 +3,6 @@
 	import { LoadingIndicator } from '$lib/components';
 	import { categories, things, wishListFilter } from '$lib/stores/catalog';
 	import CatalogView from '$lib/views/CatalogView.svelte';
-	import BottomNavigationView from '$lib/views/BottomNavigationView.svelte';
 
 	export let data;
 
@@ -22,7 +21,6 @@
 	{:else}
 		<div id="AppView" class="relative">
 			<CatalogView />
-			<BottomNavigationView />
 		</div>
 	{/if}
 </div>
