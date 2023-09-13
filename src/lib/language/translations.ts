@@ -68,6 +68,6 @@ export default {
         "Automotive": "Automotor",
         "Health": "Salud",
         "Catalog": "Catálago",
-        "My List": "My lista"
+        "My List": "Mi lista"
     }
 }
