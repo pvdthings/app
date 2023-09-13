@@ -62,7 +62,7 @@
 	</div>
 	<div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
 		{#if hasZeroStock}
-			{isMobile ? $t('Donate') : $t('Click to Donate')}
+			{$t('Donate')}
 		{:else if noneAvailable}
 			{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
 		{:else}
