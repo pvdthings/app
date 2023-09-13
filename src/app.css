@@ -19,9 +19,7 @@
         -webkit-box-shadow: 2px 2px 0px 0px #000000;
     }
 
-    .hovers-above,
-    .hovers:focus,
-    .hovers:hover {
+    .hovers-above {
         box-shadow: 3px 3px 0 #000000;
         -webkit-box-shadow: 3px 3px 0px 0px #000000;
     }
