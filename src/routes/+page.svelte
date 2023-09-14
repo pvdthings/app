@@ -1,8 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import { LoadingIndicator } from '$lib/components';
+	import { activeScreen, Screen } from '$lib/stores/app';
 	import { categories, things, wishListFilter } from '$lib/stores/catalog';
 	import CatalogView from '$lib/views/CatalogView.svelte';
+	import MyListView from '$lib/views/MyListView.svelte';
 
 	export let data;
 
@@ -20,7 +22,13 @@
 		<LoadingIndicator />
 	{:else}
 		<div id="AppView" class="relative">
-			<CatalogView />
+			{#if $activeScreen === Screen.catalog}
+				<CatalogView />
+			{/if}
+
+			{#if $activeScreen === Screen.myList}
+				<MyListView />
+			{/if}
 		</div>
 	{/if}
 </div>

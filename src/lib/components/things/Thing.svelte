@@ -1,7 +1,7 @@
 <script>
 	import BoxIcon from '$lib/icons/box.svg';
 	import { t, locale } from '$lib/language/translate';
-	import { showBorrowModal } from './BorrowModal';
+	import { things } from '$lib/stores/myList';
 
 	export let thing;
 
@@ -23,14 +23,21 @@
 		? 'bg-yellow-300'
 		: 'bg-green-400';
 
-	function getShortName(name) {
+	const getShortName = (name) => {
 		if (name.length < 30) return name;
 		return name.substring(0, 29) + '...';
-	}
+	};
 
 	const onClick = () => {
 		if (!hasZeroStock) {
-			showBorrowModal.set(true);
+			const existingThing = $things.find(t => t.id === thing.id);
+			if (existingThing) {
+				// remove
+				things.update(value => value.filter(t => t.id !== thing.id));
+			} else {
+				// add
+				things.update(value => [thing, ...value]);
+			}
 		} else {
 			window.open(donateURL, '_blank').focus();
 		}
