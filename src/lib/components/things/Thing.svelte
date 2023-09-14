@@ -1,5 +1,6 @@
 <script>
 	import BoxIcon from '$lib/icons/box.svg';
+	import BookmarkIcon from '$lib/icons/solid/bookmark.svg';
 	import { t, locale } from '$lib/language/translate';
 	import { things } from '$lib/stores/myList';
 
@@ -10,6 +11,7 @@
 
 	$: isMobile = innerWidth < 600;
 	$: fontSize = thing.name.length > 13 || isMobile ? 'text-sm' : 'text-base';
+	$: isInList = $things.find(t => t.id === thing.id) !== undefined;
 
 	const donateURL = `https://airtable.com/shrwMSrzvSLpQgQWC?prefill_Description=${encodeURIComponent(
 		thing.name
@@ -52,9 +54,14 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="flex flex-col justify-between bg-white rounded-md overflow-hidden brutal hovers-static cursor-pointer"
+	class="relative flex flex-col justify-between bg-white rounded-md overflow-hidden brutal {isInList ? '' : 'hovers-static'} cursor-pointer"
 	on:click={onClick}
 >
+	{#if isInList}
+		<div class="absolute -top-2 left-1">
+			<img src={BookmarkIcon} alt="Saved in My List" class="h-8 w-8" />
+		</div>
+	{/if}
 	<div class="p-2">
 		<img
 			src={thing.image ?? BoxIcon}
