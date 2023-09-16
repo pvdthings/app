@@ -5,6 +5,7 @@
 	import { categories, things, wishListFilter } from '$lib/stores/catalog';
 	import CatalogView from '$lib/views/CatalogView.svelte';
 	import MyListView from '$lib/views/MyListView';
+	import InfoView from '$lib/views/InfoView';
 
 	export let data;
 
@@ -28,6 +29,10 @@
 
 			{#if $activeScreen === Screen.myList}
 				<MyListView />
+			{/if}
+
+			{#if $activeScreen === Screen.info}
+				<InfoView />
 			{/if}
 		</div>
 	{/if}
