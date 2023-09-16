@@ -14,8 +14,9 @@
 	$: infoText = $t('Info');
 </script>
 
-<div class="btm-nav upward-shadow lg:hidden">
+<div class="btm-nav bg-indigo-50 upward-shadow lg:hidden">
 	<button
+		class="bg-transparent"
 		class:active={$activeScreen === Screen.catalog}
 		on:click={() => ($activeScreen = Screen.catalog)}
 	>
@@ -28,6 +29,7 @@
 		<span class="btm-nav-label font-sans font-medium">{catalogText}</span>
 	</button>
 	<button
+		class="bg-transparent"
 		class:active={$activeScreen === Screen.myList}
 		on:click={() => ($activeScreen = Screen.myList)}
 	>
@@ -40,6 +42,7 @@
 		<span class="btm-nav-label font-sans font-medium">{myListText}</span>
 	</button>
 	<button
+		class="bg-transparent"
 		class:active={$activeScreen === Screen.info}
 		on:click={() => ($activeScreen = Screen.info)}
 	>
