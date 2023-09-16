@@ -3,13 +3,14 @@
 	import BookmarkIcon from './BookmarkIcon.svelte';
 	import { t, locale } from '$lib/language/translate';
 	import { things } from '$lib/stores/myList';
+	import { showBorrowModal } from '../BorrowModal/stores';
 
 	export let thing;
 
 	let innerWidth = 0;
 	let language;
 
-	$: isMobile = innerWidth < 600;
+	$: isMobile = innerWidth < 1024;
 	$: fontSize = thing.name.length > 13 || isMobile ? 'text-sm' : 'text-base';
 	$: isInList = $things.find(t => t.id === thing.id) !== undefined;
 
@@ -32,16 +33,24 @@
 
 	const onClick = () => {
 		if (!hasZeroStock) {
-			const existingThing = $things.find(t => t.id === thing.id);
-			if (existingThing) {
-				// remove
-				things.update(value => value.filter(t => t.id !== thing.id));
+			if (isMobile) {
+				updateList();
 			} else {
-				// add
-				things.update(value => [thing, ...value]);
+				showBorrowModal.set(true);
 			}
 		} else {
 			window.open(donateURL, '_blank').focus();
+		}
+	};
+
+	const updateList = () => {
+		const existingThing = $things.find(t => t.id === thing.id);
+		if (existingThing) {
+			// remove
+			things.update(value => value.filter(t => t.id !== thing.id));
+		} else {
+			// add
+			things.update(value => [thing, ...value]);
 		}
 	};
 
