@@ -36,9 +36,9 @@
           </div>
         </td>
         <td>
-          <span class="badge badge-ghost bg-indigo-200 border-indigo-300">{$t(thing.categories[0])}</span>
+          <span class="badge badge-ghost bg-yellow-300 border-yellow-400">{$t(thing.categories[0])}</span>
         </td>
-        <th>
+        <th class="float-right">
           <button class="btn btn-ghost btn-circle" on:click={() => removeThing(thing.id)}>
             <img src={MinusCircleIcon} alt="Remove" class="h-6 w-6" />
           </button>
