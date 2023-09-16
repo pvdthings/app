@@ -2,6 +2,7 @@ export default {
     en: {
         "Button.Home": "Home",
         "Button.WishList": "Wish List",
+        "Name": "Name",
         "Category": "Category",
         "Input.Search": "Search...",
         "No Results": "No Results",
@@ -38,6 +39,7 @@ export default {
         "Button.Home": "Inicio",
         "Button.Donate": "Done",
         "Button.WishList": "Donaciones",
+        "Name": "Nombre",
         "Category": "Categoría",
         "Input.Search": "Buscar...",
         "No Results": "No hay resultados",

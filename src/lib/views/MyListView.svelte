@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { locale, t } from '$lib/language/translate';
   import { things } from '$lib/stores/myList';
   import MinusCircleIcon from '$lib/icons/minus-circle.svg';
+
+  $: isSpanish = $locale === 'es';
 
   const removeThing = (id: String) => {
     things.update(value => value.filter(t => t.id !== id));
@@ -10,29 +13,30 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
+      <th>{$t('Name')}</th>
+      <th>{$t('Category')}</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     {#each $things as thing}
+      {@const thingName = isSpanish ? thing.spanishName : thing.name}
       <tr>
         <td>
           <div class="flex items-center space-x-3">
             <div class="avatar">
               <div class="mask rounded-md border border-gray-300 w-14 h-14">
-                <img src={thing.image} alt={thing.name} />
+                <img src={thing.image} alt={thingName} />
               </div>
             </div>
             <div>
-              <div class="font-bold">{thing.name}</div>
-              <div class="text-sm opacity-50">{thing.available} available</div>
+              <div class="font-bold">{thingName}</div>
+              <div class="text-sm opacity-50">{thing.available} {$t('Available')}</div>
             </div>
           </div>
         </td>
         <td>
-          <span class="badge badge-ghost bg-indigo-200 border-indigo-300">{thing.categories[0]}</span>
+          <span class="badge badge-ghost bg-indigo-200 border-indigo-300">{$t(thing.categories[0])}</span>
         </td>
         <th>
           <button class="btn btn-ghost btn-circle" on:click={() => removeThing(thing.id)}>
