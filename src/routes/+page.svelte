@@ -4,7 +4,7 @@
 	import { activeScreen, Screen } from '$lib/stores/app';
 	import { categories, things, wishListFilter } from '$lib/stores/catalog';
 	import CatalogView from '$lib/views/CatalogView.svelte';
-	import MyListView from '$lib/views/MyListView.svelte';
+	import MyListView from '$lib/views/MyListView';
 
 	export let data;
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MyListTableRow from '$lib/components/MyList/MyListTableRow.svelte';
+	import MyListTableRow from './MyListTableRow.svelte';
   import { locale, t } from '$lib/language/translate';
   import { things } from '$lib/stores/myList';
 
