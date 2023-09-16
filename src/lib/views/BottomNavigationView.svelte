@@ -8,6 +8,7 @@
 
 	import { t } from '$lib/language/translate';
 	import { activeScreen, Screen } from '$lib/stores/app';
+	import { thingsLength } from '$lib/stores/myList';
 
 	$: catalogText = $t('Catalog');
 	$: myListText = $t('My List');
@@ -23,23 +24,28 @@
 		<img
 			src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
 			alt={catalogText}
-			width={24}
-			height={24}
+			width={28}
+			height={28}
 		/>
-		<span class="btm-nav-label font-sans font-medium">{catalogText}</span>
 	</button>
 	<button
 		class="bg-transparent"
 		class:active={$activeScreen === Screen.myList}
 		on:click={() => ($activeScreen = Screen.myList)}
 	>
-		<img
-			src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
-			alt={myListText}
-			width={24}
-			height={24}
-		/>
-		<span class="btm-nav-label font-sans font-medium">{myListText}</span>
+		<div class="indicator">
+			{#if $thingsLength}
+				<span class="indicator-item badge bg-indigo-500 border-indigo-600 text-white">
+					{$thingsLength}
+				</span> 
+			{/if}
+			<img
+				src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
+				alt={myListText}
+				width={28}
+				height={28}
+			/>
+		</div>
 	</button>
 	<button
 		class="bg-transparent"
@@ -49,10 +55,9 @@
 		<img
 			src={$activeScreen === Screen.info ? SolidInfoCircleIcon : InfoCircleIcon}
 			alt={infoText}
-			width={24}
-			height={24}
+			width={28}
+			height={28}
 		/>
-		<span class="btm-nav-label font-sans font-medium">{infoText}</span>
 	</button>
 </div>
 

@@ -1,6 +1,6 @@
 import { browser } from "$app/environment";
 import type { Thing } from "$lib/models/Thing";
-import { writable } from "svelte/store";
+import { derived, writable } from "svelte/store";
 
 const defaultValue = [];
 
@@ -14,3 +14,5 @@ things.subscribe((value) => {
     window.localStorage.setItem('myList', JSON.stringify(value));
   }
 });
+
+export const thingsLength = derived([things], ([$things]) => $things.length);
