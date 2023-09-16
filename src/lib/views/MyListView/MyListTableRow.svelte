@@ -2,6 +2,7 @@
 	import { t } from "$lib/language/translate";
 	import { createEventDispatcher } from "svelte";
   import MinusCircleIcon from '$lib/icons/minus-circle.svg';
+  import BoxIcon from '$lib/icons/box.svg';
 
   export let thingName: string;
   export let category: string;
@@ -16,7 +17,7 @@
     <div class="flex items-center space-x-3">
       <div class="avatar">
         <div class="mask rounded-md border border-gray-300 w-14 h-14">
-          <img src={imgSrc} alt={thingName} />
+          <img src={imgSrc ?? BoxIcon} alt={thingName} />
         </div>
       </div>
       <div>
