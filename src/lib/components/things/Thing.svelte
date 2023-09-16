@@ -1,6 +1,6 @@
 <script>
 	import BoxIcon from '$lib/icons/box.svg';
-	import BookmarkIcon from '$lib/icons/solid/bookmark.svg';
+	import BookmarkIcon from './BookmarkIcon.svelte';
 	import { t, locale } from '$lib/language/translate';
 	import { things } from '$lib/stores/myList';
 
@@ -58,8 +58,8 @@
 	on:click={onClick}
 >
 	{#if isInList}
-		<div class="absolute -top-2 left-1">
-			<img src={BookmarkIcon} alt="Saved in My List" class="h-8 w-8" />
+		<div class="absolute -top-2 right-1">
+			<BookmarkIcon class="h-8 w-8 fill-indigo-500" />
 		</div>
 	{/if}
 	<div class="p-2">
