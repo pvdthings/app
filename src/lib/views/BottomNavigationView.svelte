@@ -1,10 +1,10 @@
 <script>
 	import BookOpenIcon from '$lib/icons/book-open.svg';
 	import BookmarkIcon from '$lib/icons/bookmark.svg';
-	import InfoCircleIcon from '$lib/icons/info-circle.svg';
+	import LightbulbIcon from '$lib/icons/lightbulb.svg';
 	import SolidBookOpenIcon from '$lib/icons/solid/book-open.svg';
 	import SolidBookmarkIcon from '$lib/icons/solid/bookmark.svg';
-	import SolidInfoCircleIcon from '$lib/icons/solid/info-circle.svg';
+	import SolidLightbulbIcon from '$lib/icons/solid/lightbulb.svg';
 
 	import { t } from '$lib/language/translate';
 	import { activeScreen, Screen } from '$lib/stores/app';
@@ -53,7 +53,7 @@
 		on:click={() => ($activeScreen = Screen.info)}
 	>
 		<img
-			src={$activeScreen === Screen.info ? SolidInfoCircleIcon : InfoCircleIcon}
+			src={$activeScreen === Screen.info ? SolidLightbulbIcon : LightbulbIcon}
 			alt={infoText}
 			width={28}
 			height={28}
