@@ -3,6 +3,12 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      boxShadow: {
+        lowest: '0 1px 2px rgba(0, 0, 0, 0.25)',
+        low: '0 2px 2px rgba(0, 0, 0, 0.25)',
+        high: '0 3px 2px rgba(0, 0, 0, 0.25)',
+        highest: '0 4px 2px rgba(0, 0, 0, 0.25)'
+      },
       fontFamily: {
         display: ['IBM Plex Sans', 'Arial'],
         sans: ['IBM Plex Sans', 'Arial'],
