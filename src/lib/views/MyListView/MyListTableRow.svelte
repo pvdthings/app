@@ -16,13 +16,13 @@
   <td>
     <div class="flex items-center space-x-3">
       <div class="avatar">
-        <div class="mask rounded-md border border-gray-300 w-14 h-14">
+        <div class="mask rounded-md border border-gray-300 bg-white w-14 h-14">
           <img src={imgSrc ?? BoxIcon} alt={thingName} />
         </div>
       </div>
       <div>
-        <div class="font-bold">{thingName}</div>
-        <div class="text-sm opacity-50">{available} {$t('Available')}</div>
+        <div class="text-base font-bold">{thingName}</div>
+        <div class="text-sm">{available} {$t('Available')}</div>
       </div>
     </div>
   </td>
