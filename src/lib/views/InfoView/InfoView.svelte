@@ -1,5 +1,6 @@
 <script>
 	import { Button } from "$lib/components";
+	import { ButtonTheme } from "$lib/components/Button";
 	import { t } from "$lib/language/translate";
 </script>
 
@@ -11,7 +12,7 @@
       <li class="mb-2">{$t('How to Borrow.Step2')}</li>
     </ol>
     <div class="mt-4">
-      <Button on:click={() => window.open("https://www.pvdthings.coop/membership", '_blank').focus()}>
+      <Button theme={ButtonTheme.primary} on:click={() => window.open("https://www.pvdthings.coop/membership", '_blank').focus()}>
         {$t('Learn More')}
       </Button>
     </div>
