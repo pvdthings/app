@@ -1,6 +1,5 @@
 <script>
 	import { Button } from "$lib/components";
-	import { ButtonTheme } from "$lib/components/Button";
 	import { t } from "$lib/language/translate";
 </script>
 
