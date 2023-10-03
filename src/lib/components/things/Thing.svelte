@@ -1,15 +1,18 @@
 <script>
 	import BoxIcon from '$lib/icons/box.svg';
+	import BookmarkIcon from './BookmarkIcon.svelte';
 	import { t, locale } from '$lib/language/translate';
-	import { showBorrowModal } from './BorrowModal';
+	import { things } from '$lib/stores/myList';
+	import { showBorrowModal } from '../BorrowModal/stores';
 
 	export let thing;
 
 	let innerWidth = 0;
 	let language;
 
-	$: isMobile = innerWidth < 600;
+	$: isMobile = innerWidth < 1024;
 	$: fontSize = thing.name.length > 13 || isMobile ? 'text-sm' : 'text-base';
+	$: isInList = $things.find(t => t.id === thing.id) !== undefined;
 
 	const donateURL = `https://airtable.com/shrwMSrzvSLpQgQWC?prefill_Description=${encodeURIComponent(
 		thing.name
@@ -23,16 +26,31 @@
 		? 'bg-yellow-300'
 		: 'bg-green-400';
 
-	function getShortName(name) {
+	const getShortName = (name) => {
 		if (name.length < 30) return name;
 		return name.substring(0, 29) + '...';
-	}
+	};
 
 	const onClick = () => {
 		if (!hasZeroStock) {
-			showBorrowModal.set(true);
+			if (isMobile) {
+				updateList();
+			} else {
+				showBorrowModal.set(true);
+			}
 		} else {
 			window.open(donateURL, '_blank').focus();
+		}
+	};
+
+	const updateList = () => {
+		const existingThing = $things.find(t => t.id === thing.id);
+		if (existingThing) {
+			// remove
+			things.update(value => value.filter(t => t.id !== thing.id));
+		} else {
+			// add
+			things.update(value => [thing, ...value]);
 		}
 	};
 
@@ -45,9 +63,14 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="flex flex-col justify-between bg-white rounded-md overflow-hidden brutal hovers-static cursor-pointer"
+	class="relative flex flex-col justify-between bg-white rounded-md overflow-hidden brutal {isInList ? '' : 'hovers-static'} cursor-pointer"
 	on:click={onClick}
 >
+	{#if isInList}
+		<div class="absolute -top-2 right-1">
+			<BookmarkIcon class="h-8 w-8 fill-indigo-500" />
+		</div>
+	{/if}
 	<div class="p-2">
 		<img
 			src={thing.image ?? BoxIcon}
@@ -62,7 +85,7 @@
 	</div>
 	<div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
 		{#if hasZeroStock}
-			{isMobile ? $t('Donate') : $t('Click to Donate')}
+			{$t('Donate')}
 		{:else if noneAvailable}
 			{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
 		{:else}

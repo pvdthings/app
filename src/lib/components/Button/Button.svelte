@@ -47,7 +47,7 @@
     }
 
     button.primary {
-        @apply bg-primary;
+        @apply bg-primary hover:bg-yellow-200 active:bg-yellow-400;
     }
 
     button.primaryToggled {
