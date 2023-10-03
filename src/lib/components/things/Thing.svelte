@@ -92,10 +92,12 @@
 		<div class="{getBackgroundColor()} py-1 text-center font-medium border-t border-gray-500">
 			{#if hasZeroStock}
 				<span class="text-yellow-900">{$t('Donate')}</span>
-			{:else if noneAvailable}
-				{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
 			{:else if isInList}
 				<span class="text-indigo-900">Bookmarked</span>
+			{:else if noneAvailable}
+				<span class="text-red-900">
+					{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
+				</span>
 			{:else}
 				<span class="text-green-900">
 					{isMobile
