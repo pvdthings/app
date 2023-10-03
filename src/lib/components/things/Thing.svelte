@@ -68,7 +68,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="relative flex flex-col justify-between bg-white border border-gray-500 rounded-md {isInList ? 'shadow-lowest' : 'shadow-high'} overflow-hidden cursor-pointer"
+	class="relative flex flex-col justify-between bg-white border border-gray-500 rounded-md {isInList ? 'shadow-lowest' : 'shadow-low'} overflow-hidden cursor-pointer"
 	on:click={onClick}
 >
 	{#if isInList}
