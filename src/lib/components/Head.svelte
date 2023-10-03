@@ -25,5 +25,4 @@
     <meta name="twitter:site" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <link rel="canonical" href={url} />
-    <meta name="viewport" content="viewport-fit=cover">
 </svelte:head>
