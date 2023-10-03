@@ -2,11 +2,11 @@ export default {
     en: {
         "Button.Home": "Home",
         "Button.WishList": "Wish List",
+        "Name": "Name",
         "Category": "Category",
         "Input.Search": "Search...",
         "No Results": "No Results",
         "Donate": "Donate",
-        "Click to Donate": "Click to Donate",
         "Available": "Available",
         "Unavailable": "Unavailable",
         "All": "All",
@@ -30,17 +30,22 @@ export default {
         "OK": "OK",
         "Hours": "Hours",
         "Wednesday": "Wednesday",
-        "Saturday": "Saturday"
+        "Saturday": "Saturday",
+        "Catalog": "Catalog",
+        "My List": "My List",
+        "Info": "Info",
+        "Bookmarked": "Bookmarked",
+        "No Bookmarks": "No Bookmarks"
     },
     es: {
         "Button.Home": "Inicio",
-        "Button.Donate": "Donar",
+        "Button.Donate": "Done",
         "Button.WishList": "Donaciones",
+        "Name": "Nombre",
         "Category": "Categoría",
         "Input.Search": "Buscar...",
         "No Results": "No hay resultados",
-        "Donate": "Donar",
-        "Click to Donate": "Clic para donar",
+        "Donate": "Done",
         "How to Borrow": "Como pedir prestado",
         "How to Borrow.Step1": "Compre una membresía de PVD Things y pague cuotas anuales.",
         "How to Borrow.Step2": "Visítenos en 12 Library Court en Providence.",
@@ -64,6 +69,11 @@ export default {
         "Crafts": "Artesanía",
         "Pet": "Mascotas",
         "Automotive": "Automotor",
-        "Health": "Salud"
+        "Health": "Salud",
+        "Catalog": "Catálago",
+        "My List": "Mi lista",
+        "Info": "Información",
+        "Bookmarked": "Marcado",
+        "No Bookmarks": "No hay marcadores"
     }
 }
