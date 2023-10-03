@@ -1,13 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { LoadingIndicator, TextInput } from '$lib/components';
-	import { t } from '$lib/language/translate';
-	import { BorrowModal } from '$lib/components/things/BorrowModal';
-	import { categories, filteredThings, searchFilter, things, wishListFilter } from '$lib/stores/catalog';
-	import ThingsView from '$lib/views/ThingsView.svelte';
-	import WishListButtonView from '$lib/views/WishListButtonView.svelte';
-	import CategoryChooserView from '$lib/views/CategoryChooserView.svelte';
-	import SearchInputView from '$lib/views/SearchInputView.svelte';
+	import { LoadingIndicator } from '$lib/components';
+	import { activeScreen, Screen } from '$lib/stores/app';
+	import { categories, things, wishListFilter } from '$lib/stores/catalog';
+	import CatalogView from '$lib/views/CatalogView.svelte';
+	import MyListView from '$lib/views/MyListView';
+	import InfoView from '$lib/views/InfoView';
 
 	export let data;
 
@@ -24,19 +22,17 @@
 	{#if !data}
 		<LoadingIndicator />
 	{:else}
-		<BorrowModal />
-		<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
-			<div class="flex flex-row gap-4 justify-between md:justify-start">
-				<CategoryChooserView />
-				<WishListButtonView />
-			</div>
-				<SearchInputView />
-		</div>
-		<div class="mb-8">
-			{#if $filteredThings.length > 0}
-				<ThingsView />
-			{:else}
-				<div class="text-lg text-center font-bold uppercase">{$t('No Results')}</div>
+		<div id="AppView" class="relative">
+			{#if $activeScreen === Screen.catalog}
+				<CatalogView />
+			{/if}
+
+			{#if $activeScreen === Screen.myList}
+				<MyListView />
+			{/if}
+
+			{#if $activeScreen === Screen.info}
+				<InfoView />
 			{/if}
 		</div>
 	{/if}

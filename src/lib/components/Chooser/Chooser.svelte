@@ -37,7 +37,7 @@
 <div class="relative h-11" on:click|stopPropagation={() => {}} on:keypress={() => {}}>
 	<button
 		on:click={toggleDropdown}
-		class="chooser-button bg-indigo-100 hover:bg-indigo-50 h-full w-48 brutal hovers"
+		class="chooser-button bg-white hover:bg-indigo-50 rounded-md border border-gray-500 shadow-high h-full w-48"
 	>
 		<img
 			class="inline mr-1"

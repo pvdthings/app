@@ -1,3 +1,4 @@
+import type { Thing } from "$lib/models/Thing";
 import { defaultFilterCategory, filter } from "$lib/utils/filters";
 import { derived, writable } from "svelte/store";
 
@@ -7,7 +8,7 @@ export const searchFilter = writable<string>('');
 
 export const wishListFilter = writable<boolean>(false);
 
-export const things = writable<[]>(undefined);
+export const things = writable<Thing[]>(undefined);
 
 export const filteredThings = derived(
   [things, categoryFilter, searchFilter, wishListFilter],
@@ -20,4 +21,4 @@ export const filteredThings = derived(
   }
 );
 
-export const categories = writable<[]>(undefined);
+export const categories = writable<string[]>(undefined);
