@@ -8,13 +8,14 @@ import { t } from '$lib/language/translate';
 	import WishListButtonView from './WishListButtonView.svelte';
 </script>
 
-<div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
+<div class="flex flex-col-reverse gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
 	<div class="flex flex-row gap-4 justify-between md:justify-start">
 		<CategoryChooserView />
 		<WishListButtonView />
 	</div>
 	<SearchInputView />
 </div>
+<hr class="border-black border-opacity-20 my-6" />
 <BorrowModal />
 {#if $filteredThings.length > 0}
 	<ThingsView />

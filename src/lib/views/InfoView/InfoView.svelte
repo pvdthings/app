@@ -3,7 +3,7 @@
 	import { t } from "$lib/language/translate";
 </script>
 
-<div class="bg-yellow-100 brutal hovers rounded-md">
+<div class="bg-yellow-100 border border-gray-500 shadow-high rounded-md">
   <div class="container">
     <h3 class="font-bold text-2xl">{$t('How to Borrow')}</h3>
     <ol class="pl-4 pt-4 text-lg list-decimal">
@@ -16,7 +16,7 @@
       </Button>
     </div>
   </div>
-  <hr class="border-black" />
+  <hr class="border-gray-500" />
   <div class="container">
     <h4 class="font-bold">{$t('Hours')}</h4>
     <ul class="pt-1">

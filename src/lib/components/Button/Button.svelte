@@ -8,7 +8,6 @@
     export let selected: boolean = false;
     export let theme: ButtonTheme = ButtonTheme.default;
     export let size: ButtonSize = ButtonSize.normal;
-    export let flat: boolean = false;
 
     const padding = size === ButtonSize.normal ? 'px-3 py-1' : 'px-2';
 
@@ -27,7 +26,7 @@
     class:defaultToggled={isToggled(ButtonTheme.default)}
     class:primary={theme === ButtonTheme.primary}
     class:primaryToggled={isToggled(ButtonTheme.primary)}
-    class="{padding} rounded brutal {!flat && 'hovers'} font-bold font-display outline-none">
+    class="{padding} rounded-md border border-gray-500 font-semibold font-display outline-none">
         {#if icon && !selected}
             <img class="icon" src={icon} alt={text} />
         {/if}
@@ -38,8 +37,12 @@
 </button>
 
 <style>
+    button {
+        @apply shadow-high active:shadow-lowest active:transition-shadow active:duration-75;
+    }
+
     button.default {
-        @apply bg-indigo-100 hover:bg-indigo-50;
+        @apply bg-white hover:bg-indigo-50;
     }
 
     button.defaultToggled {
@@ -47,7 +50,7 @@
     }
 
     button.primary {
-        @apply bg-primary hover:bg-yellow-200 active:bg-yellow-400;
+        @apply bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-500 border-indigo-700 text-white;
     }
 
     button.primaryToggled {

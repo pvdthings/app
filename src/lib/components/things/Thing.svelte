@@ -20,11 +20,16 @@
 	const hasZeroStock = thing.stock < 1;
 	const noneAvailable = !hasZeroStock && (!thing.available || thing.available < 1);
 
-	const backgroundColor = noneAvailable
-		? 'bg-red-300'
-		: hasZeroStock
-		? 'bg-yellow-300'
-		: 'bg-green-400';
+	const getBackgroundColor = () => {
+		if (isInList)
+			return 'bg-indigo-300';
+		if (hasZeroStock)
+			return 'bg-yellow-300';
+		if (noneAvailable)
+			return 'bg-red-300';
+
+		return 'bg-green-300';
+	};
 
 	const getShortName = (name) => {
 		if (name.length < 30) return name;
@@ -63,7 +68,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="relative flex flex-col justify-between bg-white rounded-md overflow-hidden brutal {isInList ? '' : 'hovers-static'} cursor-pointer"
+	class="relative flex flex-col justify-between bg-white border border-gray-500 rounded-md {isInList ? 'shadow-lowest' : 'shadow-low'} overflow-hidden cursor-pointer"
 	on:click={onClick}
 >
 	{#if isInList}
@@ -83,15 +88,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
-		{#if hasZeroStock}
-			{$t('Donate')}
-		{:else if noneAvailable}
-			{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
-		{:else}
-			{isMobile
-				? `${thing.available} / ${thing.stock}`
-				: `${thing.available} / ${thing.stock} ${$t('Available')}`}
-		{/if}
-	</div>
+	{#key isInList}
+		<div class="{getBackgroundColor()} py-1 text-center font-medium border-t border-gray-500">
+			{#if hasZeroStock}
+				<span class="text-yellow-900">{$t('Donate')}</span>
+			{:else if isInList}
+				<span class="text-indigo-900">{$t('Bookmarked')}</span>
+			{:else if noneAvailable}
+				<span class="text-red-900">
+					{isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
+				</span>
+			{:else}
+				<span class="text-green-900">
+					{isMobile
+						? `${thing.available} / ${thing.stock}`
+						: `${thing.available} / ${thing.stock} ${$t('Available')}`}
+				</span>
+			{/if}
+		</div>
+	{/key}
 </div>

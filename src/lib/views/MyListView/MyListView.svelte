@@ -10,24 +10,28 @@
   };
 </script>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>{$t('Name')}</th>
-      <th>{$t('Category')}</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each $things as thing}
-      {@const thingName = isSpanish ? thing.spanishName : thing.name}
-      <MyListTableRow
-        on:remove={() => removeThing(thing.id)}
-        {thingName}
-        category={thing.categories[0]}
-        available={thing.available}
-        imgSrc={thing.image}
-      />
-    {/each}
-  </tbody>
-</table>
+{#if $things.length > 0}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{$t('Name')}</th>
+        <th>{$t('Category')}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {#each $things as thing}
+        {@const thingName = isSpanish ? thing.spanishName : thing.name}
+        <MyListTableRow
+          on:remove={() => removeThing(thing.id)}
+          {thingName}
+          category={thing.categories[0]}
+          available={thing.available}
+          imgSrc={thing.image}
+        />
+      {/each}
+    </tbody>
+  </table>
+{:else}
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2">{$t('No Bookmarks')}</div>
+{/if}
