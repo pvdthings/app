@@ -33,7 +33,9 @@ export default {
         "Saturday": "Saturday",
         "Catalog": "Catalog",
         "My List": "My List",
-        "Info": "Info"
+        "Info": "Info",
+        "Bookmarked": "Bookmarked",
+        "No Bookmarks": "No Bookmarks"
     },
     es: {
         "Button.Home": "Inicio",
@@ -70,6 +72,8 @@ export default {
         "Health": "Salud",
         "Catalog": "Catálago",
         "My List": "Mi lista",
-        "Info": "Información"
+        "Info": "Información",
+        "Bookmarked": "Marcado",
+        "No Bookmarks": "No hay marcadores"
     }
 }
