@@ -35,7 +35,8 @@ export default {
         "My List": "My List",
         "Info": "Info",
         "Bookmarked": "Bookmarked",
-        "No Bookmarks": "No Bookmarks"
+        "No Bookmarks": "No Bookmarks",
+        "It's not loading!": "It's not loading!"
     },
     es: {
         "Button.Home": "Inicio",
@@ -74,6 +75,7 @@ export default {
         "My List": "Mi lista",
         "Info": "Información",
         "Bookmarked": "Marcado",
-        "No Bookmarks": "No hay marcadores"
+        "No Bookmarks": "No hay marcadores",
+        "It's not loading!": "¡No se está cargando!"
     }
 }
