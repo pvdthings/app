@@ -26,6 +26,7 @@
 			alt={catalogText}
 			class="w-5 h-5"
 		/>
+		<span class="text-xs font-display font-semibold">Catalog</span>
 	</button>
 	<button
 		class="bg-transparent"
@@ -36,7 +37,7 @@
 			{#if $thingsLength}
 				<span class="indicator-item badge bg-indigo-500 border-indigo-600 text-white">
 					{$thingsLength}
-				</span> 
+				</span>
 			{/if}
 			<img
 				src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
@@ -44,6 +45,7 @@
 				class="w-5 h-5"
 			/>
 		</div>
+		<div class="text-xs font-display font-semibold">Bookmarks</div>
 	</button>
 	<button
 		class="bg-transparent"
@@ -55,6 +57,7 @@
 			alt={infoText}
 			class="w-5 h-5"
 		/>
+		<span class="text-xs font-display font-semibold">Learn</span>
 	</button>
 </div>
 
