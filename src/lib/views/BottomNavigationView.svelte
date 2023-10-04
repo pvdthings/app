@@ -15,59 +15,53 @@
 	$: infoText = $t('Info');
 </script>
 
-<div class="pb-safe-area bg-indigo-50 lg:hidden">
-	<div class="btm-nav pb-0 bg-inherit upward-shadow">
-		<button
-			class="bg-transparent"
-			class:active={$activeScreen === Screen.catalog}
-			on:click={() => ($activeScreen = Screen.catalog)}
-		>
+<div class="btm-nav min-h-[4rem] bg-indigo-50 upward-shadow lg:hidden">
+	<button
+		class="bg-transparent"
+		class:active={$activeScreen === Screen.catalog}
+		on:click={() => ($activeScreen = Screen.catalog)}
+	>
+		<img
+			src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
+			alt={catalogText}
+			width={28}
+			height={28}
+		/>
+	</button>
+	<button
+		class="bg-transparent"
+		class:active={$activeScreen === Screen.myList}
+		on:click={() => ($activeScreen = Screen.myList)}
+	>
+		<div class="indicator">
+			{#if $thingsLength}
+				<span class="indicator-item badge bg-indigo-500 border-indigo-600 text-white">
+					{$thingsLength}
+				</span> 
+			{/if}
 			<img
-				src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
-				alt={catalogText}
+				src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
+				alt={myListText}
 				width={28}
 				height={28}
 			/>
-		</button>
-		<button
-			class="bg-transparent"
-			class:active={$activeScreen === Screen.myList}
-			on:click={() => ($activeScreen = Screen.myList)}
-		>
-			<div class="indicator">
-				{#if $thingsLength}
-					<span class="indicator-item badge bg-indigo-500 border-indigo-600 text-white">
-						{$thingsLength}
-					</span> 
-				{/if}
-				<img
-					src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
-					alt={myListText}
-					width={28}
-					height={28}
-				/>
-			</div>
-		</button>
-		<button
-			class="bg-transparent"
-			class:active={$activeScreen === Screen.info}
-			on:click={() => ($activeScreen = Screen.info)}
-		>
-			<img
-				src={$activeScreen === Screen.info ? SolidLightbulbIcon : LightbulbIcon}
-				alt={infoText}
-				width={28}
-				height={28}
-			/>
-		</button>
-	</div>
+		</div>
+	</button>
+	<button
+		class="bg-transparent"
+		class:active={$activeScreen === Screen.info}
+		on:click={() => ($activeScreen = Screen.info)}
+	>
+		<img
+			src={$activeScreen === Screen.info ? SolidLightbulbIcon : LightbulbIcon}
+			alt={infoText}
+			width={28}
+			height={28}
+		/>
+	</button>
 </div>
 
 <style>
-	.pb-safe-area {
-		padding-top: env(safe-area-inset-bottom);
-	}
-
 	.upward-shadow {
 		box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.2);
 	}
