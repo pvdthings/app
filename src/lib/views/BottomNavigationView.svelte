@@ -15,7 +15,7 @@
 	$: infoText = $t('Info');
 </script>
 
-<div class="btm-nav max-h-6 bg-indigo-50 upward-shadow lg:hidden">
+<div class="btm-nav bg-indigo-50 upward-shadow lg:hidden">
 	<button
 		class="bg-transparent"
 		class:active={$activeScreen === Screen.catalog}
@@ -24,8 +24,7 @@
 		<img
 			src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
 			alt={catalogText}
-			width={28}
-			height={28}
+			class="w-5 h-5"
 		/>
 	</button>
 	<button
@@ -42,8 +41,7 @@
 			<img
 				src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
 				alt={myListText}
-				width={28}
-				height={28}
+				class="w-5 h-5"
 			/>
 		</div>
 	</button>
@@ -55,8 +53,7 @@
 		<img
 			src={$activeScreen === Screen.info ? SolidLightbulbIcon : LightbulbIcon}
 			alt={infoText}
-			width={28}
-			height={28}
+			class="w-5 h-5"
 		/>
 	</button>
 </div>
