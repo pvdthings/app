@@ -15,7 +15,7 @@
 	$: infoText = $t('Info');
 </script>
 
-<div class="btm-nav min-h-[4rem] bg-indigo-50 upward-shadow lg:hidden">
+<div class="btm-nav max-h-6 bg-indigo-50 upward-shadow lg:hidden">
 	<button
 		class="bg-transparent"
 		class:active={$activeScreen === Screen.catalog}
