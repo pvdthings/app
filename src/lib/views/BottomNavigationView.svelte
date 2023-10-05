@@ -15,7 +15,7 @@
 	$: infoText = $t('Info');
 </script>
 
-<div class="btm-nav pb-0 bg-indigo-50 upward-shadow box-content inset-bottom lg:hidden">
+<div class="btm-nav bg-indigo-50 upward-shadow box-content lg:hidden">
 	<button
 		class="bg-transparent"
 		class:active={$activeScreen === Screen.catalog}
@@ -62,10 +62,6 @@
 </div>
 
 <style>
-	.inset-bottom {
-		padding-bottom: env(safe-area-inset-bottom);
-	}
-
 	.upward-shadow {
 		box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.2);
 	}
