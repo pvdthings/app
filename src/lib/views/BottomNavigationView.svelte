@@ -11,11 +11,11 @@
 	import { thingsLength } from '$lib/stores/myList';
 
 	$: catalogText = $t('Catalog');
-	$: myListText = $t('My List');
-	$: infoText = $t('Info');
+	$: bookmarksText = $t('Bookmarks');
+	$: learnText = $t('Learn');
 </script>
 
-<div class="btm-nav bg-indigo-50 upward-shadow lg:hidden">
+<div class="btm-nav bg-indigo-50 upward-shadow box-content lg:hidden">
 	<button
 		class="bg-transparent"
 		class:active={$activeScreen === Screen.catalog}
@@ -24,9 +24,9 @@
 		<img
 			src={$activeScreen === Screen.catalog ? SolidBookOpenIcon : BookOpenIcon}
 			alt={catalogText}
-			width={28}
-			height={28}
+			class="w-5 h-5"
 		/>
+		<span class="text-xs font-display font-semibold">{catalogText}</span>
 	</button>
 	<button
 		class="bg-transparent"
@@ -37,15 +37,15 @@
 			{#if $thingsLength}
 				<span class="indicator-item badge bg-indigo-500 border-indigo-600 text-white">
 					{$thingsLength}
-				</span> 
+				</span>
 			{/if}
 			<img
 				src={$activeScreen === Screen.myList ? SolidBookmarkIcon : BookmarkIcon}
-				alt={myListText}
-				width={28}
-				height={28}
+				alt={bookmarksText}
+				class="w-5 h-5"
 			/>
 		</div>
+		<div class="text-xs font-display font-semibold">{bookmarksText}</div>
 	</button>
 	<button
 		class="bg-transparent"
@@ -54,10 +54,10 @@
 	>
 		<img
 			src={$activeScreen === Screen.info ? SolidLightbulbIcon : LightbulbIcon}
-			alt={infoText}
-			width={28}
-			height={28}
+			alt={learnText}
+			class="w-5 h-5"
 		/>
+		<span class="text-xs font-display font-semibold">{learnText}</span>
 	</button>
 </div>
 

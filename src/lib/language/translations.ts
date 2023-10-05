@@ -32,8 +32,8 @@ export default {
         "Wednesday": "Wednesday",
         "Saturday": "Saturday",
         "Catalog": "Catalog",
-        "My List": "My List",
-        "Info": "Info",
+        "Bookmarks": "Bookmarks",
+        "Learn": "Learn",
         "Bookmarked": "Bookmarked",
         "No Bookmarks": "No Bookmarks",
         "It's not loading!": "It's not loading!"
@@ -72,8 +72,8 @@ export default {
         "Automotive": "Automotor",
         "Health": "Salud",
         "Catalog": "Catálago",
-        "My List": "Mi lista",
-        "Info": "Información",
+        "Bookmarks": "Marcadores",
+        "Learn": "Aprende",
         "Bookmarked": "Marcado",
         "No Bookmarks": "No hay marcadores",
         "It's not loading!": "¡No se está cargando!"

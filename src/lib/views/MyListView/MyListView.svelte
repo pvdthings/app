@@ -12,13 +12,6 @@
 
 {#if $things.length > 0}
   <table class="table">
-    <thead>
-      <tr>
-        <th>{$t('Name')}</th>
-        <th>{$t('Category')}</th>
-        <th></th>
-      </tr>
-    </thead>
     <tbody>
       {#each $things as thing}
         {@const thingName = isSpanish ? thing.spanishName : thing.name}
