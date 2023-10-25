@@ -14,7 +14,7 @@
   <table class="table">
     <tbody>
       {#each $things as thing}
-        {@const thingName = isSpanish ? thing.spanishName : thing.name}
+        {@const thingName = isSpanish ? thing.spanishName ?? thing.name : thing.name}
         <MyListTableRow
           on:remove={() => removeThing(thing.id)}
           {thingName}
