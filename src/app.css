@@ -12,6 +12,14 @@ body {
     @apply font-body;
 }
 
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 @supports(padding:max(0px)) {
     body, header, footer {
         padding-left: min(0vmin, env(safe-area-inset-left));
